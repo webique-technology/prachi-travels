@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './styles/main.scss';
 import App from './App.jsx';
+// import { HelmetProvider } from "react-helmet-async";
 import { HelmetProvider } from "react-helmet-async";
 
 createRoot(document.getElementById("root")).render(

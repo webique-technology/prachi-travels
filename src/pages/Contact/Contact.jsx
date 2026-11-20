@@ -4,6 +4,8 @@ import SeoHead from '../../components/SeoHead/SeoHead';
 import { SITE_CONFIG } from '../../config/siteConfig';
 import { useLanguage } from '../../context/LanguageContext';
 import { buildWhatsAppUrl } from '../../utils/whatsapp';
+import SEO from "../../components/SEO";
+import seoData from "../../data/seoData";
 
 export default function Contact() {
   const { t, pick } = useLanguage();
@@ -14,10 +16,7 @@ export default function Contact() {
 
   return (
     <>
-      <SeoHead
-        title={`${t('pages.contactTitle')} – ${pick(SITE_CONFIG.brandName)}`}
-        description={t('pages.contactSub')}
-      />
+      <SEO data={seoData.contact} />
 
       <section className="page-banner">
         <div className="container-custom">

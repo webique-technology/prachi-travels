@@ -2,16 +2,15 @@ import SeoHead from '../../components/SeoHead/SeoHead';
 import TripPlanner from '../../components/TripPlanner/TripPlanner';
 import { SITE_CONFIG } from '../../config/siteConfig';
 import { useLanguage } from '../../context/LanguageContext';
+import SEO from "../../components/SEO";
+import seoData from "../../data/seoData";
 
 export default function CustomizeTrip() {
   const { t, pick } = useLanguage();
 
   return (
     <>
-      <SeoHead
-        title={`${t('planner.pageTitle')} – ${pick(SITE_CONFIG.brandName)}`}
-        description={t('planner.pageSub')}
-      />
+      <SEO data={seoData.customizeTrip} />
 
       <section className="page-banner">
         <div className="container-custom">

@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO";
+import seoData from "../../data/seoData";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -162,10 +164,7 @@ export default function Home() {
 
   return (
     <>
-      <SeoHead
-        title={`${pick(SITE_CONFIG.brandName)} – Nashik`}
-        description={t("sections.welcomeBody")}
-      />
+       <SEO data={seoData.home} />
 
       {/* 1. Togo-style Hero Slider + Floating Search Dock */}
       <HeroSlider />

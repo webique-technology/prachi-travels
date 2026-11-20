@@ -7,6 +7,8 @@ import { SITE_CONFIG } from "../../config/siteConfig";
 import { useLanguage } from "../../context/LanguageContext";
 import { VEHICLES } from "../../data/vehicles";
 import SmartImage from "../../components/SmartImage/SmartImage";
+import SEO from "../../components/SEO";
+import seoData from "../../data/seoData";
 
 export default function Vehicles() {
   const { t, pick } = useLanguage();
@@ -38,10 +40,7 @@ export default function Vehicles() {
 
   return (
     <>
-      <SeoHead
-        title={`${t("pages.vehiclesTitle")} – ${pick(SITE_CONFIG.brandName)}`}
-        description={t("pages.vehiclesSub")}
-      />
+      <SEO data={seoData.vehicles} />
 
       <section className="page-banner">
         <div className="container-custom">

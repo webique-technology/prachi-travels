@@ -1,0 +1,822 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'typography';
+@use 'global';
+@use 'header';
+
+
+
+// Togo-Inspired Hero Slider & Search Bar
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.065);
+  }
+}
+
+.hero-slider-wrapper {
+  position: relative;
+  background-color: $color-navy-deep;
+  overflow: hidden;
+}
+
+.hero-swiper {
+  width: 100%;
+  height: 490px;
+
+  @media (min-width: 768px) {
+    height: 550px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 580px;
+  }
+
+  .swiper-slide {
+    position: relative;
+    overflow: hidden;
+
+    &.swiper-slide-active .hero-slide-img {
+      animation: kenBurnsZoom 7s ease-out forwards;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $color-white;
+    background: rgba(20, 43, 69, 0.55);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    &::after {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    &:hover {
+      background: $color-blue;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.65);
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    transition: width $transition-fast, background-color $transition-fast;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $color-yellow;
+    width: 22px;
+    border-radius: 5px;
+  }
+}
+
+.hero-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-slide-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(13, 29, 48, 0.42) 0%,
+      rgba(13, 29, 48, 0.62) 55%,
+      rgba(13, 29, 48, 0.78) 100%);
+}
+
+.hero-slide-overlay-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 3rem;
+
+  @media (min-width: 992px) {
+    padding-bottom: 4.5rem;
+  }
+}
+
+// About Section
+.about-section {
+  background-color: $color-white;
+  font-family: $font-body;
+  overflow-x: clip;
+
+  .about-media {
+    max-width: 540px;
+    padding-top: 1.5rem;
+  }
+
+  .about-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    color: $color-white;
+    padding: 0.65rem 1.35rem 0.65rem 0.7rem;
+    border-radius: $radius-pill;
+    box-shadow: $shadow-card-hover;
+    background-color: $primary;
+
+    .about-badge-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: $radius-pill;
+      background-color: $secondary;
+      color: $color-white
+    }
+
+    .about-badge-text {
+      font-family: $font-display;
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: $color-white;
+    }
+  }
+
+  .about-image-wrap {
+    position: relative;
+    z-index: 1;
+
+    .about-car-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .about-content {
+
+    .about-title {
+      font-family: $font-display;
+      color: $color-ink;
+
+      .about-title-highlight {
+        color: $color-yellow;
+      }
+    }
+
+    .about-description {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: $color-muted;
+    }
+
+    .about-list {
+      .about-list-item {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: $color-body;
+
+        .about-check-icon {
+          color: $color-yellow;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .about-media {
+      padding-top: 2.75rem;
+    }
+
+    .about-badge {
+      padding: 0.5rem 1rem 0.5rem 0.55rem;
+
+      .about-badge-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .about-badge-text {
+        font-size: 0.82rem;
+      }
+    }
+  }
+}
+
+// About Section //
+
+// main section for Plan your trip name as why choose us {chnage in future} //
+.why-choose-section {
+  position: relative;
+  background-image:
+    linear-gradient(rgba($primary, 0.9), rgba($secondary, 0.8)),
+    url("../assets/images/beach-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: $font-body;
+  overflow-x: clip;
+
+  .container {
+    max-width: $container-max-width;
+  }
+
+  .why-choose-left {
+    .why-choose-subtitle {
+      font-family: $font-display;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: $accent;
+    }
+
+    .why-choose-title {
+      font-family: $font-display;
+      // font-size: clamp(1.9rem, 3.3vw, 2.75rem);
+      color: $color-white;
+
+      .why-choose-highlight {
+        color: $secondary;
+      }
+    }
+
+    .why-choose-description {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: $color-border-strong;
+      max-width: 520px;
+    }
+
+    .why-choose-image-wrap {
+      max-width: 500px;
+
+      .why-choose-car-img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .why-choose-cards {
+    .why-choose-card {
+      background-color: $color-white;
+      border-radius: $radius-xl;
+      box-shadow: $shadow-card;
+      transition: transform $transition-fast, box-shadow $transition-fast;
+
+      &:hover {
+        // transform: translateY(-4px);
+        box-shadow: $shadow-card-hover;
+      }
+
+      &.is-offset {
+        @media (min-width: 992px) {
+          margin-left: 2.75rem;
+        }
+      }
+    }
+
+    .why-choose-icon-badge {
+      width: 66px;
+      height: 66px;
+      border-radius: $radius-pill;
+      background-color: $color-bg-light;
+      color: $color-black-muted;
+    }
+
+    .why-choose-card-title {
+      font-family: $font-display;
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: $color-ink;
+    }
+
+    .why-choose-card-number {
+      font-family: $font-display;
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1.5px $color-yellow;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    .why-choose-card-text {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: $color-muted;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .why-choose-cards {
+      .why-choose-icon-badge {
+        width: 52px;
+        height: 52px;
+      }
+
+      .why-choose-card-title {
+        font-size: 1.08rem;
+      }
+
+      .why-choose-card-number {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}
+
+// main section for Plan your trip name as why choose us {chnage in future} //
+
+// CTA Section
+.cta-banner-section {
+  background-color: $accent;
+  font-family: $font-body;
+
+  .cta-banner-title {
+    font-family: $font-display;
+    font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-banner-sub {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    opacity: 0.94;
+    max-width: 560px;
+
+    @media (max-width: 991.98px) {
+      margin-inline: auto;
+    }
+  }
+
+  .cta-banner-right {
+    position: relative;
+
+    @media (min-width: 992px) {
+      border-left: 2px solid rgba($color-white, 0.85);
+
+      // Center right-pointing white triangle notch on the vertical divider
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 8px solid rgba($color-white, 0.9);
+      }
+    }
+  }
+
+  .cta-banner-phone {
+    font-family: $font-display;
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    transition: opacity $transition-fast, transform $transition-fast;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  }
+
+  .cta-banner-btn {
+    background-color: $color-black-muted;
+    color: $color-white;
+    font-family: $font-display;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.75rem;
+    border-radius: $radius-pill;
+    cursor: pointer;
+    transition: background-color $transition-fast, transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      background-color: $color-navy;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($color-black-muted, 0.25);
+    }
+  }
+}
+
+// CTA Section //
+
+// Marketplace Floating Search Bar
+.hero-enquiry-dock {
+  position: relative;
+  z-index: 15;
+  margin-top: -2.25rem;
+  margin-bottom: 0.75rem;
+
+  @media (min-width: 992px) {
+    margin-top: -3.75rem;
+  }
+}
+
+.hero-enquiry-card {
+  background-color: $color-bg-light;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-search-dock;
+  padding: 1.1rem 1.25rem;
+
+  @media (min-width: 992px) {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+// Togo Marketplace Category Discovery Strip
+.marketplace-category-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-block: 1.25rem 0.5rem;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    justify-content: space-between;
+  }
+}
+
+.marketplace-category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: $radius-md;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: $color-body;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color $transition-fast, color $transition-fast, border-color $transition-fast;
+
+  &:hover,
+  &.is-active {
+    background-color: $color-white;
+    border-color: $color-border-strong;
+    color: $color-blue-dark;
+    box-shadow: $shadow-card;
+  }
+}
+
+// Togo Marketplace Destination Photo Tile
+.destination-tile {
+  position: relative;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: block;
+  border: 1px solid $color-border;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 360ms $ease-smooth;
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
+
+  .destination-tile-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(13, 29, 48, 0.04) 35%, rgba(13, 29, 48, 0.85) 100%);
+  }
+
+  .destination-tile-caption {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.9rem;
+    color: $color-white;
+    z-index: 2;
+  }
+}
+
+// Interactive Trip Planner & Live Calculator
+.planner-step-block {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: 1.25rem;
+
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.planner-option-card {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color $transition-fast, background-color $transition-fast, box-shadow $transition-fast;
+  width: 100%;
+
+  &:hover {
+    border-color: $color-blue;
+  }
+
+  &.is-selected {
+    border-color: $color-blue;
+    background-color: $color-blue-soft;
+    box-shadow: 0 0 0 1px $color-blue;
+  }
+}
+
+.planner-vehicle-card {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color $transition-fast, box-shadow $transition-fast, transform $transition-fast;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+
+  &:hover {
+    border-color: $color-blue;
+    transform: translateY(-2px);
+  }
+
+  &.is-selected {
+    border-color: $color-blue;
+    box-shadow: 0 0 0 2px $color-blue;
+    background-color: $color-blue-soft;
+  }
+
+  .planner-vehicle-thumb {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid $color-border;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+.stepper-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $color-border-strong;
+  border-radius: $radius-md;
+  background-color: $color-white;
+  overflow: hidden;
+
+  button {
+    width: 38px;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    color: $color-navy;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover:not(:disabled) {
+      background-color: $color-blue-soft;
+      color: $color-blue-dark;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    min-width: 34px;
+    text-align: center;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: $color-navy;
+  }
+}
+
+.sticky-calculator-panel {
+  @media (min-width: 992px) {
+    position: sticky;
+    top: calc(#{$header-height} + 1.25rem);
+  }
+}
+
+.planner-mobile-sticky-summary {
+  position: fixed;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: calc(#{$mobile-bottom-nav-height} + env(safe-area-inset-bottom, 0px) + 0.5rem);
+  z-index: 1020;
+  background-color: $color-navy;
+  color: $color-white;
+  border-radius: $radius-lg;
+  padding: 0.65rem 0.9rem;
+  box-shadow: 0 10px 26px rgba(13, 29, 48, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+// Mobile Bottom Sticky Nav
+.mobile-bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1035;
+  background-color: $color-white;
+  border-top: 1px solid $color-border;
+  box-shadow: 0 -4px 16px rgba(20, 43, 69, 0.08);
+  padding: 0.45rem 0.65rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mobile-bottom-nav-item {
+  min-height: 46px;
+  border-radius: $radius-md;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  font-size: 0.73rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0.25rem 0.35rem;
+
+  &.is-whatsapp {
+    background-color: $color-green-soft;
+    color: #1c6b44;
+    border: 1px solid rgba(53, 167, 111, 0.35);
+  }
+
+  &.is-customize {
+    background-color: $color-yellow;
+    color: $color-navy;
+    font-weight: 700;
+  }
+
+  &.is-cars {
+    background-color: $color-blue-soft;
+    color: $color-navy;
+    border: 1px solid rgba(33, 150, 210, 0.25);
+  }
+}
+
+.whatsapp-desktop-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1020;
+  box-shadow: 0 10px 26px rgba(38, 134, 87, 0.3);
+  border-radius: $radius-md;
+}
+
+// Common Enquiry Modal
+.enquiry-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1055;
+  background-color: rgba(13, 29, 48, 0.62);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.enquiry-modal-dialog {
+  background-color: $color-white;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border;
+  box-shadow: 0 24px 48px rgba(13, 29, 48, 0.24);
+  width: 100%;
+  max-width: 550px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 1.85rem;
+  }
+}
+
+.smart-image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  text-align: center;
+  background: linear-gradient(135deg, $color-blue-soft 0%, $color-surface-alt 100%);
+  color: $color-navy;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.site-footer {
+  background-color: $color-navy-deep;
+  color: rgba(255, 255, 255, 0.82);
+  padding-top: 3.25rem;
+  padding-bottom: 1.75rem;
+
+  h2,
+  h3,
+  .footer-brand {
+    color: $color-white;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+
+    &:hover {
+      color: $color-yellow;
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+}
+
+.card-swiper {
+  padding-bottom: 2.35rem !important;
+
+  .swiper-pagination-bullet-active {
+    background-color: $color-blue;
+  }
+}
+
+.package-details-drawer {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid $color-border;
+  font-size: 0.86rem;
+}

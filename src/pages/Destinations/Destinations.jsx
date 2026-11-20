@@ -6,6 +6,8 @@ import SeoHead from '../../components/SeoHead/SeoHead';
 import { SITE_CONFIG } from '../../config/siteConfig';
 import { useLanguage } from '../../context/LanguageContext';
 import { DESTINATION_CATEGORIES, DESTINATIONS } from '../../data/destinations';
+import SEO from "../../components/SEO";
+import seoData from "../../data/seoData";
 
 export default function Destinations() {
   const { t, pick } = useLanguage();
@@ -28,10 +30,7 @@ export default function Destinations() {
 
   return (
     <>
-      <SeoHead
-        title={`${t('pages.destinationsTitle')} – ${pick(SITE_CONFIG.brandName)}`}
-        description={t('pages.destinationsSub')}
-      />
+      <SEO data={seoData.destinations} />
 
       <section className="page-banner">
         <div className="container-custom">

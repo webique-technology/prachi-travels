@@ -14,6 +14,8 @@ import { SITE_CONFIG } from '../../config/siteConfig';
 import { useEnquiryModal } from '../../context/EnquiryModalContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { IMAGES } from '../../data/images';
+import SEO from "../../components/SEO";
+import seoData from "../../data/seoData";
 
 export default function About() {
   const { openEnquiryModal } = useEnquiryModal();
@@ -68,10 +70,7 @@ export default function About() {
 
   return (
     <>
-      <SeoHead
-        title={`${t('pages.aboutTitle')} – ${pick(SITE_CONFIG.brandName)}`}
-        description={t('pages.aboutSub')}
-      />
+      <SEO data={seoData.vehicles} />
 
       <section className="page-banner">
         <div className="container-custom">

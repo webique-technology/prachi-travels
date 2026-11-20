@@ -6,6 +6,8 @@ import SeoHead from '../../components/SeoHead/SeoHead';
 import { SITE_CONFIG } from '../../config/siteConfig';
 import { useLanguage } from '../../context/LanguageContext';
 import { PACKAGE_CATEGORIES, TOUR_PACKAGES } from '../../data/packages';
+import SEO from "../../components/SEO";
+import seoData from "../../data/seoData";
 
 const DESTINATION_FILTERS = [
   'All',
@@ -52,10 +54,7 @@ export default function Packages() {
 
   return (
     <>
-      <SeoHead
-        title={`${t('pages.packagesTitle')} – ${pick(SITE_CONFIG.brandName)}`}
-        description={t('pages.packagesSub')}
-      />
+      <SEO data={seoData.packages} />
 
       <section className="page-banner">
         <div className="container-custom">

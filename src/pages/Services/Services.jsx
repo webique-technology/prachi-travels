@@ -10,7 +10,8 @@ import { useEnquiryModal } from "../../context/EnquiryModalContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { Container } from "react-bootstrap";
-
+import SEO from "../../components/SEO";
+import seoData from "../../data/seoData";
 
 export default function Services() {
   const { openEnquiryModal } = useEnquiryModal();
@@ -24,10 +25,7 @@ export default function Services() {
   }, [activePackageCat]);
   return (
     <>
-      <SeoHead
-        title={`${t("pages.servicesTitle")} – ${pick(SITE_CONFIG.brandName)}`}
-        description={t("pages.servicesSub")}
-      />
+      <SEO data={seoData.services} />
 
       <section className="page-banner">
         <Container className="">

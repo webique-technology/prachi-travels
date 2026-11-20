@@ -119,7 +119,7 @@ export default function Vehicles() {
           )}
 
           <div className="mt-5 text-center">
-            <Link to="/customize-trip" className="btn-yellow">
+            <Link to="/customize-trip" className="btn-common primary">
               <SlidersHorizontal size={17} aria-hidden="true" />
               <span>{t("hero.customizeBtn")}</span>
             </Link>

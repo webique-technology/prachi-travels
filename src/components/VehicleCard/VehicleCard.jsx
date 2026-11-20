@@ -49,7 +49,7 @@ export default function VehicleCard({ vehicle }) {
 
         <button
           type="button"
-          className="btn-yellow w-100 justify-content-center"
+          className="btn-common accent w-100 justify-content-center"
           onClick={() =>
             openEnquiryModal(
               {

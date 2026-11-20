@@ -375,10 +375,10 @@ export default function Home() {
             </div>
             <Link
               to="/destinations"
-              className="btn-outline-navy align-self-start align-self-md-auto"
+              className="btn-common accent pill align-self-start align-self-md-auto"
             >
               <span>{t("sections.allDestinations")}</span>
-              <ArrowRight size={16} aria-hidden="true" />
+              <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
           </div>
 
@@ -506,7 +506,7 @@ export default function Home() {
 
                 <button
                   type="button"
-                  className="cta-banner-btn d-inline-flex align-items-center justify-content-center gap-2 border-0"
+                  className="btn-common primary pill d-inline-flex align-items-center justify-content-center gap-2 border-0"
                   onClick={() =>
                     openEnquiryModal(
                       {

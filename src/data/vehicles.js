@@ -1,4 +1,4 @@
-import { IMAGES } from "./images";
+import { CAR_IMAGES } from "./images";
 
 export const VEHICLES = [
   {
@@ -23,7 +23,7 @@ export const VEHICLES = [
       hi: "नासिक लोकल व छोटे डे-ट्रिप",
       mr: "नाशिक लोकल व जवळच्या सहली",
     },
-    image: IMAGES.fleetHatchback,
+    image: CAR_IMAGES.wagonr,
     imageAlt: "Silver hatchback rental car in Nashik",
   },
   {
@@ -48,7 +48,7 @@ export const VEHICLES = [
       hi: "मुंबई एयरपोर्ट, पुणे व शिरडी कैब",
       mr: "मुंबई एअरपोर्ट, पुणे व शिर्डी कॅब",
     },
-    image: IMAGES.fleetSedan,
+    image: CAR_IMAGES.dezire,
     imageAlt: "White tourist sedan cab on Maharashtra mountain highway",
   },
   {
@@ -69,7 +69,7 @@ export const VEHICLES = [
       hi: "हिल स्टेशन और घाट मार्ग",
       mr: "थंड हवेची ठिकाणे व घाट रस्ते",
     },
-    image: IMAGES.heroFamilyRoadtrip,
+    image: CAR_IMAGES.scorpio,
     imageAlt: "White SUV family tourer at misty Western Ghats viewpoint",
   },
   {
@@ -94,7 +94,7 @@ export const VEHICLES = [
       hi: "परिवार व वीकेंड ट्रिप्स",
       mr: "कुटुंब व वीकेंड सहली",
     },
-    image: IMAGES.fleetInnova,
+    image: CAR_IMAGES.ertiga,
     imageAlt: "Family MUV touring vehicle along Western Ghats highway",
   },
   {
@@ -115,7 +115,7 @@ export const VEHICLES = [
       hi: "लंबी हाइवे यात्रा व तीर्थयात्रा",
       mr: "लांब पल्ल्याचे प्रवास व तीर्थयात्रा",
     },
-    image: IMAGES.fleetInnova,
+    image: CAR_IMAGES.innova,
     imageAlt: "Silver Toyota Innova MPV parked at scenic overlook",
   },
   {
@@ -136,7 +136,7 @@ export const VEHICLES = [
       hi: "वरिष्ठ नागरिकों व प्रीमियम यात्रा",
       mr: "ज्येष्ठ नागरिक व आरामदायी प्रवास",
     },
-    image: IMAGES.fleetInnova,
+    image: CAR_IMAGES.crysta,
     imageAlt: "Toyota Innova Crysta overlooking Maharashtra valleys",
   },
   {
@@ -161,7 +161,7 @@ export const VEHICLES = [
       hi: "संयुक्त परिवार व ग्रुप यात्रा",
       mr: "संयुक्त कुटुंब व अष्टविनायक गट",
     },
-    image: IMAGES.fleetTempo,
+    image: CAR_IMAGES.tempoTraveller,
     imageAlt: "White Tempo Traveller minibus on Maharashtra hill road",
   },
   {
@@ -186,7 +186,7 @@ export const VEHICLES = [
       hi: "शादी, कॉर्पोरेट व बड़े समूह",
       mr: "लग्नसमारंभ व मोठ्या सहली",
     },
-    image: IMAGES.fleetTempo,
+    image: CAR_IMAGES.bus,
     imageAlt: "Group tourist coach for large Maharashtra tours",
   },
 ];

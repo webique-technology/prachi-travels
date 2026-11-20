@@ -121,8 +121,8 @@
         &:focus-visible,
         &.show,
         &:active {
-            background-color: $color-yellow;
-            border-color: $color-yellow-hover;
+            background-color: $secondary;
+            border-color: $primary;
             color: $color-white;
             box-shadow: none;
         }
@@ -165,7 +165,7 @@
             min-width: 26px;
             padding: 2px 5px;
             border-radius: 5px;
-            background-color: $color-yellow;
+            background-color: $accent;
             color: $color-navy;
             font-size: 0.72rem;
             font-weight: 700;
@@ -179,7 +179,7 @@
 
         &.is-active,
         &.active {
-            background-color: $color-yellow;
+            background-color: $accent;
             color: $color-black-muted;
 
             .lang-code {

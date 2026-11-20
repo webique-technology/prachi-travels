@@ -1,100 +1,329 @@
-import { Link } from 'react-router-dom';
-import { Clock, Compass, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
-import { SITE_CONFIG } from '../../config/siteConfig';
-import { useLanguage } from '../../context/LanguageContext';
-import { buildWhatsAppUrl } from '../../utils/whatsapp';
+import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import {
+  ChevronRight,
+  Clock,
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Youtube,
+} from "lucide-react";
+import { SITE_CONFIG } from "../../config/siteConfig";
+import { useLanguage } from "../../context/LanguageContext";
+import { buildWhatsAppUrl } from "../../utils/whatsapp";
+import logo from "../../assets/images/prachitravellogo.svg";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   const { t, pick } = useLanguage();
   const quickWaUrl = buildWhatsAppUrl({
-    serviceType: 'General Enquiry',
-    pickupLocation: 'Nashik',
+    serviceType: "General Enquiry",
+    pickupLocation: "Nashik",
   });
 
   return (
     <footer className="site-footer">
-      <div className="container-custom">
-        <div className="row g-4 g-lg-5">
-          <div className="col-lg-4">
+      <Container>
+        <Row className="g-4 g-lg-5">
+          {/* Column 1: Brand Logo, Description & WhatsApp Pill CTA */}
+          <Col lg={4} md={6}>
             <Link
               to="/"
-              className="footer-brand d-inline-flex align-items-center gap-2 text-decoration-none fs-4 fw-bold font-display mb-3"
+              className="footer-brand d-inline-flex align-items-center text-decoration-none mb-3"
             >
-              <Compass size={24} style={{ color: '#FFC928' }} aria-hidden="true" />
-              <span>{pick(SITE_CONFIG.brandName)}</span>
+              <img src={logo} alt={pick(SITE_CONFIG.brandName)} />
             </Link>
-            <p className="mb-3 small" style={{ maxWidth: '38ch', lineHeight: 1.65 }}>
-              {t('footer.desc')}
-            </p>
-            <a href={quickWaUrl} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
+
+            <p className="footer-desc mb-4">{t("footer.desc")}</p>
+
+            {/* <a
+              href={quickWaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-cta-btn d-inline-flex align-items-center justify-content-center gap-2 text-decoration-none"
+            >
               <MessageCircle size={17} aria-hidden="true" />
-              <span>{t('footer.chatWa')}</span>
-            </a>
-          </div>
+              <span>{t("footer.chatWa")}</span>
+            </a> */}
+          </Col>
 
-          <div className="col-6 col-md-4 col-lg-2">
-            <h3 className="fs-6 fw-semibold mb-3">{t('footer.quickLinks')}</h3>
-            <ul className="list-unstyled d-flex flex-column gap-2 mb-0 small">
-              <li><Link to="/">{t('nav.home')}</Link></li>
-              <li><Link to="/about">{t('nav.about')}</Link></li>
-              <li><Link to="/services">{t('nav.services')}</Link></li>
-              <li><Link to="/vehicles">{t('nav.vehicles')}</Link></li>
-              <li><Link to="/packages">{t('nav.packages')}</Link></li>
-              <li><Link to="/destinations">{t('nav.destinations')}</Link></li>
-              <li><Link to="/customize-trip">{t('nav.planYourTrip')}</Link></li>
-              <li><Link to="/contact">{t('nav.contact')}</Link></li>
+          {/* Column 2: Quick Links with Gold Underline Bar & Chevron Bullets */}
+          <Col xs={6} md={6} lg={2}>
+            <h3 className="footer-heading">{t("footer.quickLinks")}</h3>
+            <ul className="footer-link-list list-unstyled d-flex flex-column gap-2 mb-0">
+              <li>
+                <Link
+                  to="/"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>{t("nav.home")}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>{t("nav.about")}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>{t("nav.services")}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/vehicles"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>{t("nav.vehicles")}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/packages"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>{t("nav.packages")}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/destinations"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>{t("nav.destinations")}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/customize-trip"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>{t("nav.planYourTrip")}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>{t("nav.contact")}</span>
+                </Link>
+              </li>
             </ul>
-          </div>
+          </Col>
 
-          <div className="col-6 col-md-4 col-lg-3">
-            <h3 className="fs-6 fw-semibold mb-3">{t('footer.popularRoutes')}</h3>
-            <ul className="list-unstyled d-flex flex-column gap-2 mb-0 small">
-              <li><Link to="/vehicles">Nashik – Mumbai Airport</Link></li>
-              <li><Link to="/packages">Nashik – Trimbakeshwar – Shirdi</Link></li>
-              <li><Link to="/packages">Ashtavinayak &amp; Jyotirlinga</Link></li>
-              <li><Link to="/packages">Ellora &amp; Ajanta Caves</Link></li>
-              <li><Link to="/destinations">Mahabaleshwar &amp; Lonavala</Link></li>
-              <li><Link to="/destinations">Konkan &amp; Ganpatipule</Link></li>
+          {/* Column 3: Popular Routes with Gold Underline Bar & Chevron Bullets */}
+          <Col xs={6} md={6} lg={3}>
+            <h3 className="footer-heading">{t("footer.popularRoutes")}</h3>
+            <ul className="footer-link-list list-unstyled d-flex flex-column gap-2 mb-0">
+              <li>
+                <Link
+                  to="/vehicles"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>Nashik – Mumbai Airport</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/packages"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>Nashik – Trimbakeshwar – Shirdi</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/packages"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>Ashtavinayak &amp; Jyotirlinga</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/packages"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>Ellora &amp; Ajanta Caves</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/destinations"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>Mahabaleshwar &amp; Lonavala</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/destinations"
+                  className="footer-link-item d-inline-flex align-items-center gap-1"
+                >
+                  <ChevronRight
+                    size={15}
+                    className="footer-link-chevron flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>Konkan &amp; Ganpatipule</span>
+                </Link>
+              </li>
             </ul>
-          </div>
+          </Col>
 
-          <div className="col-md-4 col-lg-3">
-            <h3 className="fs-6 fw-semibold mb-3">{t('footer.contactDesk')}</h3>
-            <ul className="list-unstyled d-flex flex-column gap-2 small mb-3">
-              <li className="d-flex align-items-start gap-2">
-                <MapPin size={16} className="flex-shrink-0 mt-1" aria-hidden="true" />
-                <span>{pick(SITE_CONFIG.address)}</span>
+          {/* Column 4: Contact Desk with Circular Gold Icon Badges & Social Links */}
+          <Col md={6} lg={3}>
+            <h3 className="footer-heading">{t("footer.contactDesk")}</h3>
+            <ul className="footer-contact-list list-unstyled d-flex flex-column gap-3 mb-3">
+              <li className="d-flex align-items-start gap-3">
+                <span className="footer-contact-badge d-inline-flex align-items-center justify-content-center flex-shrink-0">
+                  <MapPin size={15} aria-hidden="true" />
+                </span>
+                <span className="footer-contact-text">
+                  {pick(SITE_CONFIG.address)}
+                </span>
               </li>
-              <li className="d-flex align-items-start gap-2">
-                <Phone size={16} className="flex-shrink-0 mt-1" aria-hidden="true" />
-                <span>{SITE_CONFIG.displayPhone}</span>
+              <li className="d-flex align-items-center gap-3">
+                <span className="footer-contact-badge d-inline-flex align-items-center justify-content-center flex-shrink-0">
+                  <Phone size={15} aria-hidden="true" />
+                </span>
+                <span className="footer-contact-text">
+                  {SITE_CONFIG.displayPhone}
+                </span>
               </li>
-              <li className="d-flex align-items-start gap-2">
-                <Mail size={16} className="flex-shrink-0 mt-1" aria-hidden="true" />
-                <span>{SITE_CONFIG.email}</span>
+              <li className="d-flex align-items-center gap-3">
+                <span className="footer-contact-badge d-inline-flex align-items-center justify-content-center flex-shrink-0">
+                  <Mail size={15} aria-hidden="true" />
+                </span>
+                <span className="footer-contact-text text-break">
+                  {SITE_CONFIG.email}
+                </span>
               </li>
-              <li className="d-flex align-items-start gap-2">
-                <Clock size={16} className="flex-shrink-0 mt-1" aria-hidden="true" />
-                <span>{pick(SITE_CONFIG.businessHours)}</span>
+              <li className="d-flex align-items-start gap-3">
+                <span className="footer-contact-badge d-inline-flex align-items-center justify-content-center flex-shrink-0">
+                  <Clock size={15} aria-hidden="true" />
+                </span>
+                <span className="footer-contact-text">
+                  {pick(SITE_CONFIG.businessHours)}
+                </span>
               </li>
             </ul>
-            <div className="d-flex gap-3 small">
-              <a href={SITE_CONFIG.socialLinks.instagram}>Instagram</a>
-              <span aria-hidden="true">·</span>
-              <a href={SITE_CONFIG.socialLinks.facebook}>Facebook</a>
-              <span aria-hidden="true">·</span>
-              <a href={SITE_CONFIG.socialLinks.youtube}>YouTube</a>
+
+            <div className="footer-socials d-flex align-items-center gap-2 pt-2">
+              <a
+                href={SITE_CONFIG.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="footer-social-link d-inline-flex align-items-center justify-content-center"
+              >
+                <Instagram size={16} aria-hidden="true" />
+              </a>
+
+              <a
+                href={SITE_CONFIG.socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="footer-social-link d-inline-flex align-items-center justify-content-center"
+              >
+                <Facebook size={16} aria-hidden="true" />
+              </a>
+
+              <a
+                href={SITE_CONFIG.socialLinks.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="footer-social-link d-inline-flex align-items-center justify-content-center"
+              >
+                <Youtube size={16} aria-hidden="true" />
+              </a>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
-        <div className="footer-divider d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 small">
-          <p className="mb-0">
-            &copy; {year} {pick(SITE_CONFIG.brandName)}. {t('footer.copyright')}
+        <div className="footer-divider d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
+          <p className="footer-copyright mb-0">
+            &copy; {year} {pick(SITE_CONFIG.brandName)}. {t("footer.copyright")}
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

@@ -3,6 +3,7 @@
 @use 'typography';
 @use 'global';
 @use 'header';
+@use 'footer';
 
 
 
@@ -402,25 +403,6 @@
     }
   }
 
-  .cta-banner-btn {
-    background-color: $color-black-muted;
-    color: $color-white;
-    font-family: $font-display;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.85rem 1.75rem;
-    border-radius: $radius-pill;
-    cursor: pointer;
-    transition: background-color $transition-fast, transform $transition-fast, box-shadow $transition-fast;
-
-    &:hover {
-      background-color: $color-navy;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba($color-black-muted, 0.25);
-    }
-  }
 }
 
 // CTA Section //
@@ -777,34 +759,6 @@
   font-size: 0.875rem;
 }
 
-.site-footer {
-  background-color: $color-navy-deep;
-  color: rgba(255, 255, 255, 0.82);
-  padding-top: 3.25rem;
-  padding-bottom: 1.75rem;
-
-  h2,
-  h3,
-  .footer-brand {
-    color: $color-white;
-  }
-
-  a {
-    color: rgba(255, 255, 255, 0.78);
-    text-decoration: none;
-
-    &:hover {
-      color: $color-yellow;
-      text-decoration: underline;
-    }
-  }
-}
-
-.footer-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  margin-top: 2.25rem;
-  padding-top: 1.25rem;
-}
 
 .card-swiper {
   padding-bottom: 2.35rem !important;

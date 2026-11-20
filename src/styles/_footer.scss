@@ -1,0 +1,166 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.site-footer {
+    background-color: $primary;
+    color: rgba($color-white, 0.84);
+    font-family: $font-body;
+    padding-top: 4rem;
+    padding-bottom: 1.75rem;
+
+    .container {
+        max-width: $container-max-width;
+    }
+
+    .footer-brand {
+        max-width: 170px;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .footer-desc {
+        max-width: 38ch;
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: rgba($color-white, 0.82);
+    }
+
+    // Gold Pill Button matching reference image CTA
+    .footer-cta-btn {
+        background-color: $accent;
+        color: $color-black-muted;
+        font-family: $font-display;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        padding: 0.8rem 1.65rem;
+        border-radius: $radius-pill;
+        transition: background-color $transition-fast, transform $transition-fast;
+
+        &:hover {
+            background-color: $color-yellow-hover;
+            color: $color-black-muted;
+            transform: translateY(-2px);
+        }
+    }
+
+    // Column Headings with Segmented Underline Bar (grey — gold — grey)
+    .footer-heading {
+        position: relative;
+        font-family: $font-display;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: $color-white;
+        padding-bottom: 0.95rem;
+        margin-bottom: 1.35rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 78px;
+            height: 2px;
+            background-color: rgba($color-white, 0.22);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+            width: 28px;
+            height: 2px;
+            background-color: $accent;
+        }
+    }
+
+    // Link Items with Gold Chevron Marker
+    .footer-link-list {
+        font-size: 0.92rem;
+
+        .footer-link-item {
+            color: rgba($color-white, 0.84);
+            text-decoration: none;
+            transition: color $transition-fast, transform $transition-fast;
+
+            .footer-link-chevron {
+                color: $accent;
+                transition: transform $transition-fast;
+            }
+
+            &:hover {
+                color: $accent;
+                transform: translateX(3px);
+
+                .footer-link-chevron {
+                    transform: translateX(2px);
+                }
+            }
+        }
+    }
+
+    // Contact Items with Circular Gold Icon Badges
+    .footer-contact-list {
+        font-size: 0.92rem;
+
+        .footer-contact-badge {
+            width: 34px;
+            height: 34px;
+            border-radius: $radius-pill;
+            background-color: $accent;
+            color: $color-white;
+        }
+
+        .footer-contact-text {
+            color: rgba($color-white, 0.88);
+            line-height: 1.55;
+        }
+    }
+
+    .footer-socials {
+        font-size: 0.88rem;
+        color: rgba($color-white, 0.55);
+
+        .footer-social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: $radius-pill;
+            background-color: rgba($color-white, 0.08);
+            border: 1px solid rgba($color-white, 0.14);
+            color: $color-white;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background-color $transition-fast, color $transition-fast, border-color $transition-fast, transform $transition-fast;
+
+            &:hover {
+                background-color: $accent;
+                border-color: $accent;
+                color: $color-black-muted;
+                transform: translateY(-2px);
+            }
+        }
+
+        // a {
+        //     color: rgba($color-white, 0.82);
+        //     text-decoration: none;
+        //     transition: color $transition-fast;
+
+        //     &:hover {
+        //         color: $accent;
+        //     }
+        // }
+    }
+
+    .footer-divider {
+        border-top: 1px solid rgba($color-white, 0.14);
+        margin-top: 2.75rem;
+        padding-top: 1.35rem;
+        font-size: 0.88rem;
+        color: rgba($color-white, 0.72);
+    }
+}

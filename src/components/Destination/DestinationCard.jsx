@@ -34,7 +34,7 @@ export default function DestinationCard({ destination }) {
 
         <button
           type="button"
-          className="btn-outline-navy w-100 justify-content-center"
+          className="btn-common accent pill w-100 justify-content-center"
           onClick={() =>
             openEnquiryModal(
               {

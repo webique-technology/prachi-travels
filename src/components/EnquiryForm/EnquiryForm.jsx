@@ -69,12 +69,12 @@ export default function EnquiryForm({
 
       <form onSubmit={handleSubmit} noValidate>
         <div className="mb-3">
-          <div className="filter-bar w-100">
+          <div className="filter-bar bg-transparent border-0 w-100 dfle flex-wrap">
             {['Cab', 'One Way', 'Round Trip', 'Tour Package', 'Group Tour'].map((type) => (
               <button
                 key={type}
                 type="button"
-                className={`filter-tab ${serviceType === type ? 'is-active' : ''}`}
+                className={`filter-tab h6 py-1 lh-1 text-capitalize mb-0 ${serviceType === type ? 'is-active' : ''}`}
                 onClick={() => setServiceType(type)}
               >
                 {type}

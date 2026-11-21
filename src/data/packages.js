@@ -1,9 +1,9 @@
 import { IMAGES } from './images';
-
+import { AIRPORT_IMAGES } from './images';
 
 export const SERVICE_CATEGORIES = [
-  { id: 'Cities', label: { en: 'Cities', hi: 'शहर', mr: 'शहरे' } },
   { id: 'Airports', label: { en: 'Airports', hi: 'हवाई अड्डे', mr: 'विमानतळे' } },
+  { id: 'Cities', label: { en: 'Cities', hi: 'शहर', mr: 'शहरे' } },
   { id: 'Railway Stations', label: { en: 'Railway Stations', hi: 'रेलवे स्टेशन', mr: 'रेल्वे स्थानके' } },
 ];
 
@@ -478,7 +478,7 @@ export const AIRPORT_DATA = [
     id: 'airport-01',
     slug: 'nashik-airport-cab',
     category: 'Airports',
-    image: '/images/nashik-airport.jpg',
+    image:  AIRPORT_IMAGES.nashikAirport,
     title: {
       en: 'Nashik Airport (Ozar) Cab Service',
       hi: 'नासिक एयरपोर्ट (ओज़र) कैब सेवा',
@@ -524,7 +524,7 @@ export const AIRPORT_DATA = [
     id: 'airport-02',
     slug: 'shirdi-airport-cab',
     category: 'Airports',
-    image: '/images/datashirdi-airport.webp',
+    image:  AIRPORT_IMAGES.shirdiAirport,
     title: {
       en: 'Shirdi International Airport Cab Service',
       hi: 'शिरडी अंतर्राष्ट्रीय एयरपोर्ट कैब सेवा',
@@ -570,7 +570,7 @@ export const AIRPORT_DATA = [
     id: 'airport-03',
     slug: 'pune-airport-cab',
     category: 'Airports',
-    image: '/images/pune-airport.jpg',
+    image:  AIRPORT_IMAGES.puneAirport,
     title: {
       en: 'Pune International Airport Cab Service',
       hi: 'पुणे अंतर्राष्ट्रीय एयरपोर्ट कैब सेवा',
@@ -616,7 +616,7 @@ export const AIRPORT_DATA = [
     id: 'airport-04',
     slug: 'mumbai-airport-cab',
     category: 'Airports',
-    image: '/images/mumbai-airport.jpg',
+    image:  AIRPORT_IMAGES.mumbaiAirport,
     title: {
       en: 'Mumbai International Airport (T1 & T2) Cab',
       hi: 'मुंबई अंतर्राष्ट्रीय एयरपोर्ट (T1 और T2) कैब सेवा',
@@ -662,7 +662,7 @@ export const AIRPORT_DATA = [
     id: 'airport-05',
     slug: 'chhatrapati-sambhajinagar-airport-cab',
     category: 'Airports',
-    image: '/images/chhatrapati-sambhajinagar-airport.jpg',
+    image:  AIRPORT_IMAGES.sambhajinagarAirport,
     title: {
       en: 'Chhatrapati Sambhajinagar Airport Cab',
       hi: 'छत्रपति संभाजीनगर एयरपोर्ट कैब सेवा',
@@ -708,7 +708,7 @@ export const AIRPORT_DATA = [
     id: 'airport-06',
     slug: 'nagpur-airport-cab',
     category: 'Airports',
-    image: '/images/nagpur-airport.jpg',
+    image:  AIRPORT_IMAGES.nagpurAirport,
     title: {
       en: 'Nagpur Dr. Babasaheb Ambedkar Airport Cab',
       hi: 'नागपुर डॉ. बाबासाहेब अंबेडकर एयरपोर्ट कैब सेवा',
@@ -754,7 +754,7 @@ export const AIRPORT_DATA = [
     id: 'airport-07',
     slug: 'kolhapur-airport-cab',
     category: 'Airports',
-    image: '/images/kolhapur-airport.jpg',
+    image:  AIRPORT_IMAGES.kolhapurAirport,
     title: {
       en: 'Kolhapur Chhatrapati Rajaram Maharaj Airport Cab',
       hi: 'कोल्हापुर छत्रपति राजाराम महाराज एयरपोर्ट कैब सेवा',

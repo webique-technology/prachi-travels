@@ -164,3 +164,13 @@
         color: rgba($color-white, 0.72);
     }
 }
+
+.footer-copyright{
+    a{
+        text-decoration: none;
+        color: $color-bg-light;
+        &:hover{
+            color: $accent;
+        }
+    }
+}

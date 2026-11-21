@@ -20,6 +20,25 @@ import crysta from "../assets/images/crysta.webp";
 import tempoTraveller from "../assets/images/tempo-traveller.webp";
 import bus from "../assets/images/tempo-traveller.webp";
 
+// airport image
+import nashikAirport from "../assets/images/nashik-airport.jpg";
+import mumbaiAirport from "../assets/images/mumbai-airport.jpg";
+import puneAirport from "../assets/images/pune-airport.jpg";
+import kolhapurAirport from "../assets/images/kolhapur-airport.jpg";
+import shirdiAirport from "../assets/images/datashirdi-airport.webp";
+import sambhajinagarAirport from "../assets/images/chhatrapati-sambhajinagar-airport.jpg";
+import nagpurAirport from "../assets/images/nagpur-airport.jpg";
+
+export const AIRPORT_IMAGES = {
+  nashikAirport,
+  mumbaiAirport,
+  puneAirport,
+  kolhapurAirport,
+  shirdiAirport,
+  sambhajinagarAirport,
+  nagpurAirport,
+};
+
 export const IMAGES = {
   heroSahyadri,
   heroFamilyRoadtrip,

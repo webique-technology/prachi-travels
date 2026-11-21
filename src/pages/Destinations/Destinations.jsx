@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, SlidersHorizontal } from 'lucide-react';
-import DestinationCard from '../../components/DestinationCard/DestinationCard';
+import DestinationCard from '../../components/Destination/DestinationCard';
 import SeoHead from '../../components/SeoHead/SeoHead';
 import { SITE_CONFIG } from '../../config/siteConfig';
 import { useLanguage } from '../../context/LanguageContext';
 import { DESTINATION_CATEGORIES, DESTINATIONS } from '../../data/destinations';
 import SEO from "../../components/SEO";
 import seoData from "../../data/seoData";
+import { Col, Container, Row } from 'react-bootstrap';
 
 export default function Destinations() {
   const { t, pick } = useLanguage();
@@ -33,20 +34,20 @@ export default function Destinations() {
       <SEO data={seoData.destinations} />
 
       <section className="page-banner">
-        <div className="container-custom">
+        <Container className="">
           <h1 className="display-6 fw-bold mb-2">{t('pages.destinationsTitle')}</h1>
           <p className="mb-0" style={{ maxWidth: '58ch' }}>
             {t('pages.destinationsSub')}
           </p>
-        </div>
+        </Container>
       </section>
 
       <section className="section-pad">
-        <div className="container-custom">
+        <Container className="">
           <div className="travel-card p-3 p-md-4 mb-4">
-            <div className="row g-3 align-items-center">
-              <div className="col-lg-8">
-                <div className="filter-bar w-100">
+            <Row className="g-3 align-items-center">
+              <Col className="">
+                <div className="filter-bar align-items-center justify-content-center w-100">
                   {DESTINATION_CATEGORIES.map((cat) => (
                     <button
                       key={cat.id}
@@ -58,9 +59,9 @@ export default function Destinations() {
                     </button>
                   ))}
                 </div>
-              </div>
+              </Col>
 
-              <div className="col-lg-4">
+              {/* <div className="col-lg-4">
                 <div className="input-group">
                   <span className="input-group-text bg-white border-end-0 text-secondary">
                     <Search size={16} aria-hidden="true" />
@@ -74,8 +75,8 @@ export default function Destinations() {
                     aria-label={t('pages.destinationsTitle')}
                   />
                 </div>
-              </div>
-            </div>
+              </div> */}
+            </Row>
           </div>
 
           {filteredDestinations.length === 0 ? (
@@ -103,12 +104,12 @@ export default function Destinations() {
           )}
 
           <div className="mt-5 text-center">
-            <Link to="/customize-trip" className="btn-yellow">
+            <Link to="/customize-trip" className="btn-common accent pill">
               <SlidersHorizontal size={17} aria-hidden="true" />
               <span>{t('hero.customizeBtn')}</span>
             </Link>
           </div>
-        </div>
+        </Container>
       </section>
     </>
   );

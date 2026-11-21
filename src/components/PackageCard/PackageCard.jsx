@@ -70,7 +70,7 @@ export default function PackageCard({ pkg }) {
         <div className="d-flex flex-wrap gap-2 mt-2">
           <button
             type="button"
-            className="btn-yellow flex-grow-1 justify-content-center"
+            className="btn-common accent pill flex-grow-1 justify-content-center"
             onClick={() =>
               openEnquiryModal(
                 {
@@ -91,7 +91,7 @@ export default function PackageCard({ pkg }) {
 
           <button
             type="button"
-            className="btn-outline-navy"
+            className="btn-common light pill"
             aria-expanded={expanded}
             onClick={() => setExpanded((prev) => !prev)}
           >

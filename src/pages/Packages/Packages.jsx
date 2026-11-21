@@ -69,13 +69,13 @@ export default function Packages() {
         <div className="container-custom">
           <div className="travel-card p-3 p-md-4 mb-4">
             <div className="row g-3 align-items-center">
-              <div className="col-lg-7">
-                <div className="filter-bar w-100">
+              <div className="col-12">
+                <div className="filter-bar align-items-center justify-content-center w-100">
                   {PACKAGE_CATEGORIES.map((cat) => (
                     <button
                       key={cat.id}
                       type="button"
-                      className={`filter-tab ${selectedCategory === cat.id ? 'is-active' : ''}`}
+                      className={`filter-tab lh-1 text-capitalize ${selectedCategory === cat.id ? 'is-active' : ''}`}
                       onClick={() => setSelectedCategory(cat.id)}
                     >
                       {pick(cat.label)}
@@ -84,7 +84,7 @@ export default function Packages() {
                 </div>
               </div>
 
-              <div className="col-sm-6 col-lg-3">
+              {/* <div className="col-sm-6 col-lg-3">
                 <select
                   aria-label={t('cards.allDestinations')}
                   className="form-select"
@@ -97,9 +97,9 @@ export default function Packages() {
                     </option>
                   ))}
                 </select>
-              </div>
+              </div> */}
 
-              <div className="col-sm-6 col-lg-2">
+              {/* <div className="col-sm-6 col-lg-2">
                 <select
                   aria-label={t('cards.allDurations')}
                   className="form-select"
@@ -111,7 +111,7 @@ export default function Packages() {
                   <option value="3">3 {t('planner.days')}</option>
                   <option value="4+">4+ {t('planner.days')}</option>
                 </select>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -120,7 +120,7 @@ export default function Packages() {
               <p className="text-secondary mb-3">{t('cards.noResults')}</p>
               <button
                 type="button"
-                className="btn-outline-navy mx-auto"
+                className="btn-common accent mx-auto"
                 onClick={() => {
                   setSelectedCategory('All');
                   setSelectedDestination('All');
@@ -141,7 +141,7 @@ export default function Packages() {
           )}
 
           <div className="mt-5 text-center">
-            <Link to="/customize-trip" className="btn-yellow">
+            <Link to="/customize-trip" className="btn-common accent pill">
               <SlidersHorizontal size={17} aria-hidden="true" />
               <span>{t('hero.customizeBtn')}</span>
             </Link>

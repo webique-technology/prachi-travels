@@ -17,7 +17,7 @@ export default function Services() {
   const { openEnquiryModal } = useEnquiryModal();
   const { t, pick } = useLanguage();
 
-  const [activePackageCat, setActivePackageCat] = useState("Cities");
+  const [activePackageCat, setActivePackageCat] = useState("Airports");
   const filteredPackages = useMemo(() => {
     return SERVICE_PACKAGES.filter(
       (pkg) => pkg.category === activePackageCat,

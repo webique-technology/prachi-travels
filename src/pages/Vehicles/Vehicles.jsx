@@ -9,6 +9,7 @@ import { VEHICLES } from "../../data/vehicles";
 import SmartImage from "../../components/SmartImage/SmartImage";
 import SEO from "../../components/SEO";
 import seoData from "../../data/seoData";
+import { Container } from "react-bootstrap";
 
 export default function Vehicles() {
   const { t, pick } = useLanguage();
@@ -43,19 +44,19 @@ export default function Vehicles() {
       <SEO data={seoData.vehicles} />
 
       <section className="page-banner">
-        <div className="container-custom">
+        <Container className="">
           <h1 className="display-6 fw-bold mb-2">{t("pages.vehiclesTitle")}</h1>
           <p className="mb-0" style={{ maxWidth: "58ch" }}>
             {t("pages.vehiclesSub")}
           </p>
-        </div>
+        </Container>
       </section>
 
       <section className="section-pad">
-        <div className="container-custom">
+        <Container className="">
           <div className="travel-card p-3 p-md-4 mb-4">
-            <div className="d-flex flex-column flex-xl-row align-items-xl-center justify-content-between gap-3">
-              <div className="filter-bar">
+            <div className="d-flex w-100 align-items-center justify-content-center">
+              <div className="filter-bar d-flex align-items-center justify-content-center gap-2">
                 {categories.map((cat) => (
                   <button
                     key={cat.id}
@@ -68,7 +69,7 @@ export default function Vehicles() {
                 ))}
               </div>
 
-              <div className="d-flex align-items-center gap-2 flex-shrink-0">
+              {/* <div className="d-flex align-items-center gap-2 flex-shrink-0">
                 <label
                   htmlFor="vehicle-seats-filter"
                   className="form-label mb-0 text-nowrap"
@@ -89,7 +90,7 @@ export default function Vehicles() {
                   <option value={12}>12+</option>
                   <option value={32}>32+</option>
                 </select>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -118,12 +119,12 @@ export default function Vehicles() {
           )}
 
           <div className="mt-5 text-center">
-            <Link to="/customize-trip" className="btn-common primary">
+            <Link to="/customize-trip" className="btn-common accent pill">
               <SlidersHorizontal size={17} aria-hidden="true" />
               <span>{t("hero.customizeBtn")}</span>
             </Link>
           </div>
-        </div>
+        </Container>
       </section>
     </>
   );

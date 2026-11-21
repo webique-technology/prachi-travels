@@ -2,16 +2,12 @@ import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
-import aboutImg from "../../assets/images/car.webp"
+import aboutImg from "../../assets/images/family-road-trip-stockcake.jpg";
 
 export default function AboutSection() {
   const { t } = useLanguage();
 
-  const highlights = [
-    t('about.point1'),
-    t('about.point2'),
-    t('about.point3'),
-  ];
+  const highlights = [t("about.point1"), t("about.point2"), t("about.point3")];
 
   return (
     <section className="about-section section-pad">
@@ -26,8 +22,8 @@ export default function AboutSection() {
                   <Award size={26} aria-hidden="true" />
                 </div>
                 <div className="about-badge-text">
-                  <span className="d-block">{t('about.badgeLine1')}</span>
-                  <span className="d-block">{t('about.badgeLine2')}</span>
+                  <span className="d-block">{t("about.badgeLine1")}</span>
+                  <span className="d-block">{t("about.badgeLine2")}</span>
                 </div>
               </div>
 
@@ -35,9 +31,9 @@ export default function AboutSection() {
               <div className="about-image-wrap text-center">
                 <Image
                   src={aboutImg}
-                  alt={t('about.imageAlt')}
+                  alt={t("about.imageAlt")}
                   fluid
-                  className="about-car-img"
+                  className="about-car-img rounded-4"
                 />
               </div>
             </div>
@@ -47,22 +43,25 @@ export default function AboutSection() {
           <Col lg={6}>
             <div className="about-content">
               <span className="section-kicker text-capitalize">
-                {t('about.subtitle')}
+                {t("about.subtitle")}
               </span>
 
               <h2 className="about-title section-heading mb-3">
-                {t('about.titleStart')}{' '}
-                <span className="about-title-highlight">{t('about.titleHighlight')}</span>{' '}
-                {t('about.titleEnd')}
+                {t("about.titleStart")}{" "}
+                <span className="about-title-highlight">
+                  {t("about.titleHighlight")}
+                </span>{" "}
+                {t("about.titleEnd")}
               </h2>
 
-              <p className="about-description mb-4">
-                {t('about.description')}
-              </p>
+              <p className="about-description mb-4">{t("about.description")}</p>
 
               <ul className="about-list list-unstyled d-flex flex-column gap-3 mb-4">
                 {highlights.map((item, index) => (
-                  <li key={index} className="about-list-item d-flex align-items-start gap-2">
+                  <li
+                    key={index}
+                    className="about-list-item d-flex align-items-start gap-2"
+                  >
                     <CheckCircle2
                       size={18}
                       className="about-check-icon flex-shrink-0 mt-1"
@@ -73,14 +72,16 @@ export default function AboutSection() {
                 ))}
               </ul>
 
-              <Button
-                as={Link}
-                to="/about"
-                className="btn-common accent pill d-inline-flex align-items-center gap-2"
-              >
-                <span>{t('about.ctaBtn')}</span>
-                <ArrowRight size={16} aria-hidden="true" />
-              </Button>
+              <div className="d-flex align-items-center justify-content-center justify-content-sm-start">
+                <Button
+                  as={Link}
+                  to="/about"
+                  className="btn-common accent pill d-inline-flex align-items-center gap-2"
+                >
+                  <span>{t("about.ctaBtn")}</span>
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Button>
+              </div>
             </div>
           </Col>
         </Row>

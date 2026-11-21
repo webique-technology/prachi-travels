@@ -1,6 +1,7 @@
 import { MessageCircle } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { buildWhatsAppUrl } from '../../utils/whatsapp';
+import whatsappIcon from '../../assets/images/whatsapp.png'
 
 export default function WhatsAppButton() {
   const { t } = useLanguage();
@@ -15,11 +16,12 @@ export default function WhatsAppButton() {
         href={quickWaUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-whatsapp"
+        className="btn-whatsapp btn-whatsapp-circle"
         aria-label={t('mobileNav.whatsapp')}
       >
-        <MessageCircle size={18} aria-hidden="true" />
-        <span>{t('mobileNav.whatsapp')}</span>
+        {/* <MessageCircle size={18} aria-hidden="true" /> */}
+        {/* <span>{t('mobileNav.whatsapp')}</span> */}
+        <img src={whatsappIcon} alt="whatsapp-icon" />
       </a>
     </div>
   );

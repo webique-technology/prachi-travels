@@ -379,10 +379,10 @@
         }
 
         &.is-active {
-            background-color: rgba($color-yellow, 0.16);
+            background-color: rgba($accent, 0.16);
             color: $color-navy;
             font-weight: 700;
-            border-left: 3px solid $color-yellow;
+            border-left: 3px solid $accent;
         }
     }
 

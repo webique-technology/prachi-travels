@@ -104,13 +104,13 @@ export default function About() {
                   {introCopy}
                 </p>
                 <div className="d-flex flex-wrap gap-2">
-                  <Link to="/customize-trip" className="btn-yellow">
+                  <Link to="/customize-trip" className="btn-common accent pill">
                     <SlidersHorizontal size={16} aria-hidden="true" />
                     <span>{t('hero.customizeBtn')}</span>
                   </Link>
                   <button
                     type="button"
-                    className="btn-whatsapp"
+                    className="btn-common light pill"
                     onClick={() =>
                       openEnquiryModal(
                         { serviceType: 'About Page Enquiry', pickupLocation: 'Nashik' },

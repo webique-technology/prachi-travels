@@ -14,7 +14,7 @@ import {
 import { SITE_CONFIG } from "../../config/siteConfig";
 import { useLanguage } from "../../context/LanguageContext";
 import { buildWhatsAppUrl } from "../../utils/whatsapp";
-import logo from "../../assets/images/prachitravellogo.svg";
+import logo from "../../assets/images/footer-logo.svg";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -37,7 +37,7 @@ export default function Footer() {
               <img src={logo} alt={pick(SITE_CONFIG.brandName)} />
             </Link>
 
-            <p className="footer-desc mb-4">{t("footer.desc")}</p>
+            <p className="footer-desc mb-3">{t("footer.desc")}</p>
 
             {/* <a
               href={quickWaUrl}
@@ -48,6 +48,37 @@ export default function Footer() {
               <MessageCircle size={17} aria-hidden="true" />
               <span>{t("footer.chatWa")}</span>
             </a> */}
+            <div className="footer-socials d-flex align-items-center gap-2 pt-2">
+              <a
+                href={SITE_CONFIG.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="footer-social-link d-inline-flex align-items-center justify-content-center"
+              >
+                <Instagram size={16} aria-hidden="true" />
+              </a>
+
+              <a
+                href={SITE_CONFIG.socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="footer-social-link d-inline-flex align-items-center justify-content-center"
+              >
+                <Facebook size={16} aria-hidden="true" />
+              </a>
+
+              <a
+                href={SITE_CONFIG.socialLinks.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="footer-social-link d-inline-flex align-items-center justify-content-center"
+              >
+                <Youtube size={16} aria-hidden="true" />
+              </a>
+            </div>
           </Col>
 
           {/* Column 2: Quick Links with Gold Underline Bar & Chevron Bullets */}
@@ -283,44 +314,23 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-
-            <div className="footer-socials d-flex align-items-center gap-2 pt-2">
-              <a
-                href={SITE_CONFIG.socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="footer-social-link d-inline-flex align-items-center justify-content-center"
-              >
-                <Instagram size={16} aria-hidden="true" />
-              </a>
-
-              <a
-                href={SITE_CONFIG.socialLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="footer-social-link d-inline-flex align-items-center justify-content-center"
-              >
-                <Facebook size={16} aria-hidden="true" />
-              </a>
-
-              <a
-                href={SITE_CONFIG.socialLinks.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="footer-social-link d-inline-flex align-items-center justify-content-center"
-              >
-                <Youtube size={16} aria-hidden="true" />
-              </a>
-            </div>
           </Col>
         </Row>
 
         <div className="footer-divider d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
           <p className="footer-copyright mb-0">
             &copy; {year} {pick(SITE_CONFIG.brandName)}. {t("footer.copyright")}
+          </p>
+          <p className="footer-copyright mb-0">
+            {t("footer.designedBy")}{" "}
+            <a
+              href="https://webique.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-contact-text"
+            >
+              {t("footer.developerName")}
+            </a>
           </p>
         </div>
       </Container>

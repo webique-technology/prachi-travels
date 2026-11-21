@@ -74,11 +74,12 @@ export const TRANSLATIONS = {
       whyKicker: "Why Travel With Us",
       whyTitle: "Clear, Comfortable & Family-First",
       testimonialsKicker: "Demo Reviews",
-      testimonialsTitle: "Traveller Stories (Demo Content)",
+      testimonialsTitle: "Traveller Stories",
       testimonialsNote:
         "Representative sample reviews shown until verified client feedback is added.",
       ctaTitle: "Book Your Cab It's Simple And Affordable",
-      ctaSub: "Tell us your dates and destination — our Nashik desk replies directly on WhatsApp and phone with transparent fixed fares.",
+      ctaSub:
+        "Tell us your dates and destination — our Nashik desk replies directly on WhatsApp and phone with transparent fixed fares.",
       ctaBtn: "BOOK YOUR CAB",
     },
     why: {
@@ -100,6 +101,7 @@ export const TRANSLATIONS = {
       placesCovered: "Places Covered",
       indicativeFare: "Indicative Fare",
       inclusions: "Inclusions",
+      features: "Features",
       exclusions: "Exclusions",
       bestTime: "Best time",
       showAll: "Show All",
@@ -185,8 +187,9 @@ export const TRANSLATIONS = {
       quickLinks: "Quick Links",
       popularRoutes: "Popular Routes",
       contactDesk: "Nashik Travel Desk",
-      copyright:
-        "Demo website with configurable rates & placeholder contact details.",
+      copyright: "All Rights are Reserved",
+      designedBy: "Designed & Developed by",
+      developerName: "Webique Technology",
     },
     pages: {
       aboutTitle: "About Us",
@@ -228,19 +231,19 @@ export const TRANSLATIONS = {
       titleEnd: "",
       description:
         "Plan a trip that matches your interests, comfort and budget. Choose your destination, travel dates, vehicle and stay preferences. We'll help you bring it all together.",
-      pointNo1:"01",
+      pointNo1: "01",
       point1: "Choose Your Destination",
       point1decs:
         "Select your starting point and the places you wish to explore.",
-      pointNo2:"02",
+      pointNo2: "02",
       point2: "Share Your Travel Plan",
       point2decs:
         "Choose your travel dates, trip duration and number of travellers.",
-      pointNo3:"03",
+      pointNo3: "03",
       point3: "Customize Your Experience",
       point3decs:
         "Pick your preferred vehicle, hotel, meals and sightseeing options.",
-      pointNo4:"04",
+      pointNo4: "04",
       point4: "Check Your Estimated Cost",
       point4decs:
         "Get an approximate trip cost based on your choices and send your enquiry directly to us on WhatsApp.",
@@ -319,11 +322,12 @@ export const TRANSLATIONS = {
       whyKicker: "हमें क्यों चुनें",
       whyTitle: "स्पष्ट, आरामदायक और परिवार-अनुकूल सेवा",
       testimonialsKicker: "डेमो समीक्षाएं",
-      testimonialsTitle: "यात्रियों के अनुभव (डेमो सामग्री)",
+      testimonialsTitle: "यात्रियों के अनुभव",
       testimonialsNote:
         "ग्राहकों की वास्तविक समीक्षाओं के आने तक ये उदाहरण समीक्षाएं दिखाई गई हैं।",
       ctaTitle: "अपनी कैब बुक करें — बेहद आसान और किफायती",
-      ctaSub: "हमें अपनी यात्रा की तारीख और गंतव्य बताएं — हमारा नासिक डेस्क पारदर्शी फिक्स्ड किराए के साथ सीधे व्हाट्सएप और कॉल पर जवाब देता है।",
+      ctaSub:
+        "हमें अपनी यात्रा की तारीख और गंतव्य बताएं — हमारा नासिक डेस्क पारदर्शी फिक्स्ड किराए के साथ सीधे व्हाट्सएप और कॉल पर जवाब देता है।",
       ctaBtn: "अपनी कैब बुक करें",
     },
     why: {
@@ -344,6 +348,7 @@ export const TRANSLATIONS = {
       placesCovered: "मुख्य स्थान",
       indicativeFare: "अनुमानित किराया",
       inclusions: "शामिल सेवाएं",
+      features: "विशेषताएं",
       exclusions: "शामिल नहीं",
       bestTime: "उत्तम समय",
       showAll: "सभी दिखाएं",
@@ -428,8 +433,9 @@ export const TRANSLATIONS = {
       quickLinks: "त्वरित लिंक",
       popularRoutes: "लोकप्रिय मार्ग",
       contactDesk: "नासिक ट्रैवल डेस्क",
-      copyright:
-        "कॉन्फ़िगरेबल दरों और प्लेसहोल्डर संपर्क विवरण के साथ डेमो वेबसाइट।",
+      copyright: "सर्वाधिकार सुरक्षित",
+      designedBy: "डिज़ाइन और विकसित",
+      developerName: "Webique Technology",
     },
     pages: {
       aboutTitle: "हमारे बारे में",
@@ -465,31 +471,30 @@ export const TRANSLATIONS = {
       imageAlt: "नासिक में भरोसेमंद कैब सेवा",
     },
     planTripSec: {
-      subtitle: '4 आसान चरणों में अपनी ट्रिप प्लान करें',
-      titleStart: 'आपकी यात्रा, आपके अंदाज़ में!',
-      titleHighlight: '',
-      titleEnd: '',
+      subtitle: "4 आसान चरणों में अपनी ट्रिप प्लान करें",
+      titleStart: "आपकी यात्रा, आपके अंदाज़ में!",
+      titleHighlight: "",
+      titleEnd: "",
       description:
-        'अपनी रुचि, सुविधा और बजट के अनुसार यात्रा की योजना बनाएं। अपना गंतव्य, यात्रा की तिथियां, वाहन और ठहरने की प्राथमिकता चुनें—बाकी सब हम आपके लिए व्यवस्थित करेंगे।',
-      pointNo1: '01',
-      point1: 'अपना गंतव्य चुनें',
+        "अपनी रुचि, सुविधा और बजट के अनुसार यात्रा की योजना बनाएं। अपना गंतव्य, यात्रा की तिथियां, वाहन और ठहरने की प्राथमिकता चुनें—बाकी सब हम आपके लिए व्यवस्थित करेंगे।",
+      pointNo1: "01",
+      point1: "अपना गंतव्य चुनें",
       point1decs:
-        'अपना प्रस्थान स्थान और वे स्थान चुनें जहां आप घूमना चाहते हैं।',
-      pointNo2: '02',
-      point2: 'अपनी यात्रा योजना साझा करें',
-      point2decs:
-        'अपनी यात्रा की तिथियां, अवधि और यात्रियों की संख्या चुनें।',
-      pointNo3: '03',
-      point3: 'अपने अनुभव को कस्टमाइज़ करें',
+        "अपना प्रस्थान स्थान और वे स्थान चुनें जहां आप घूमना चाहते हैं।",
+      pointNo2: "02",
+      point2: "अपनी यात्रा योजना साझा करें",
+      point2decs: "अपनी यात्रा की तिथियां, अवधि और यात्रियों की संख्या चुनें।",
+      pointNo3: "03",
+      point3: "अपने अनुभव को कस्टमाइज़ करें",
       point3decs:
-        'अपना पसंदीदा वाहन, होटल, भोजन और दर्शनीय स्थल भ्रमण विकल्प चुनें।',
-      pointNo4: '04',
-      point4: 'अनुमानित खर्च जांचें',
+        "अपना पसंदीदा वाहन, होटल, भोजन और दर्शनीय स्थल भ्रमण विकल्प चुनें।",
+      pointNo4: "04",
+      point4: "अनुमानित खर्च जांचें",
       point4decs:
-        'अपने विकल्पों के आधार पर अनुमानित यात्रा लागत जानें और सीधे व्हाट्सएप पर हमें पूछताछ भेजें.',
+        "अपने विकल्पों के आधार पर अनुमानित यात्रा लागत जानें और सीधे व्हाट्सएप पर हमें पूछताछ भेजें.",
       expText:
-        'ऐसी यात्रा बनाएं जो आपके लिए बिल्कुल सही लगे। योजना बनाने की जिम्मेदारी हम संभाल लेंगे!',
-      imageAlt: 'नासिक में भरोसेमंद कैब सेवा',
+        "ऐसी यात्रा बनाएं जो आपके लिए बिल्कुल सही लगे। योजना बनाने की जिम्मेदारी हम संभाल लेंगे!",
+      imageAlt: "नासिक में भरोसेमंद कैब सेवा",
     },
   },
 
@@ -561,11 +566,12 @@ export const TRANSLATIONS = {
       whyKicker: "आम्हाला का निवडाल",
       whyTitle: "स्पष्ट, आरामदायी आणि कुटुंबासाठी सुरक्षित प्रवास",
       testimonialsKicker: "डेमो अभिप्राय",
-      testimonialsTitle: "प्रवाशांचे अनुभव (नमुना अभिप्राय)",
+      testimonialsTitle: "प्रवाशांचे अनुभव",
       testimonialsNote:
         "ग्राहकांचे प्रत्यक्ष अभिप्राय मिळेपर्यंत हे नमुना अभिप्राय दाखवले आहेत.",
       ctaTitle: "तुमची कॅब बुक करा — अगदी सोपे आणि परवडणारे",
-      ctaSub: "आम्हाला तुमच्या प्रवासाच्या तारखा आणि ठिकाण सांगा — आमचा नाशिक डेस्क पारदर्शक फिक्स्ड दरांसह थेट व्हॉट्सॲप आणि कॉलवर उत्तर देतो.",
+      ctaSub:
+        "आम्हाला तुमच्या प्रवासाच्या तारखा आणि ठिकाण सांगा — आमचा नाशिक डेस्क पारदर्शक फिक्स्ड दरांसह थेट व्हॉट्सॲप आणि कॉलवर उत्तर देतो.",
       ctaBtn: "तुमची कॅब बुक करा",
     },
     why: {
@@ -586,6 +592,7 @@ export const TRANSLATIONS = {
       placesCovered: "समाविष्ट स्थळे",
       indicativeFare: "अंदाजे दर",
       inclusions: "समाविष्ट सेवा",
+      features: "वैशिष्ट्ये",
       exclusions: "वगळलेल्या बाबी",
       bestTime: "उत्तम कालावधी",
       showAll: "सर्व दाखवा",
@@ -670,7 +677,9 @@ export const TRANSLATIONS = {
       quickLinks: "महत्त्वाचे दुवे",
       popularRoutes: "लोकप्रिय मार्ग",
       contactDesk: "नाशिक ट्रॅव्हल डेस्क",
-      copyright: "नमुना दर व प्लेसहोल्डर संपर्क माहितीसह डेमो वेबसाइट.",
+      copyright: "सर्व हक्क राखीव आहेत",
+      designedBy: "डिझाइन आणि विकसित",
+      developerName: "Webique Technology",
     },
     pages: {
       aboutTitle: "आमच्याबद्दल",
@@ -704,31 +713,86 @@ export const TRANSLATIONS = {
       imageAlt: "नाशिकमधील विश्वासार्ह कॅब सेवा",
     },
     planTripSec: {
-      subtitle: '४ सोप्या टप्प्यांत तुमची ट्रिप प्लॅन करा',
-      titleStart: 'तुमची सहल, तुमच्या पद्धतीने!',
-      titleHighlight: '',
-      titleEnd: '',
+      subtitle: "४ सोप्या टप्प्यांत तुमची ट्रिप प्लॅन करा",
+      titleStart: "तुमची सहल, तुमच्या पद्धतीने!",
+      titleHighlight: "",
+      titleEnd: "",
       description:
-        'तुमची आवड, सोय आणि बजेटनुसार सहलीचे नियोजन करा. तुमचे ठिकाण, प्रवासाच्या तारखा, वाहन आणि निवासाची पसंती निवडा—आम्ही सर्व नियोजन एकत्र जोडून देऊ.',
-      pointNo1: '०१',
-      point1: 'तुमचे गंतव्य ठिकाण निवडा',
+        "तुमची आवड, सोय आणि बजेटनुसार सहलीचे नियोजन करा. तुमचे ठिकाण, प्रवासाच्या तारखा, वाहन आणि निवासाची पसंती निवडा—आम्ही सर्व नियोजन एकत्र जोडून देऊ.",
+      pointNo1: "०१",
+      point1: "तुमचे गंतव्य ठिकाण निवडा",
       point1decs:
-        'तुमचे सुरुवातीचे ठिकाण आणि तुम्हाला पाहायची असलेली स्थळे निवडा.',
-      pointNo2: '०२',
-      point2: 'तुमचा प्रवास आराखडा शेअर करा',
+        "तुमचे सुरुवातीचे ठिकाण आणि तुम्हाला पाहायची असलेली स्थळे निवडा.",
+      pointNo2: "०२",
+      point2: "तुमचा प्रवास आराखडा शेअर करा",
       point2decs:
-        'तुमच्या प्रवासाच्या तारखा, सहलीचा कालावधी आणि प्रवाशांची संख्या निवडा.',
-      pointNo3: '०३',
-      point3: 'तुमचा अनुभव कस्टमाइज़ करा',
+        "तुमच्या प्रवासाच्या तारखा, सहलीचा कालावधी आणि प्रवाशांची संख्या निवडा.",
+      pointNo3: "०३",
+      point3: "तुमचा अनुभव कस्टमाइज़ करा",
       point3decs:
-        'तुमचे पसंतीचे वाहन, हॉटेल, जेवण आणि प्रेक्षणीय स्थळे भेटीचे पर्याय निवडा.',
-      pointNo4: '०४',
-      point4: 'अंदाजे खर्च तपासा',
+        "तुमचे पसंतीचे वाहन, हॉटेल, जेवण आणि प्रेक्षणीय स्थळे भेटीचे पर्याय निवडा.",
+      pointNo4: "०४",
+      point4: "अंदाजे खर्च तपासा",
       point4decs:
-        'तुमच्या निवडींवर आधारित अंदाजे प्रवास खर्च पहा आणि थेट व्हॉट्सॲपवर आम्हाला चौकशी पाठवा.',
+        "तुमच्या निवडींवर आधारित अंदाजे प्रवास खर्च पहा आणि थेट व्हॉट्सॲपवर आम्हाला चौकशी पाठवा.",
       expText:
-        'तुम्हाला अगदी योग्य वाटेल अशी सहल तयार करा. नियोजनाची काळजी आम्ही घेऊ!',
-      imageAlt: 'नाशिकमधील विश्वासार्ह कॅब सेवा',
+        "तुम्हाला अगदी योग्य वाटेल अशी सहल तयार करा. नियोजनाची काळजी आम्ही घेऊ!",
+      imageAlt: "नाशिकमधील विश्वासार्ह कॅब सेवा",
     },
   },
 };
+
+export const CONTACT_FAQS = [
+  {
+    id: "booking-time",
+    question: {
+      en: "How Long Does A Cab Booking Take?",
+      hi: "कैब बुकिंग की पुष्टि होने में कितना समय लगता है?",
+      mr: "कॅब बुकिंगची खात्री होण्यासाठी किती वेळ लागतो?",
+    },
+    answer: {
+      en: "Our Nashik dispatch desk confirms local and outstation cab bookings within 10 to 15 minutes via WhatsApp or phone call. Once confirmed, you receive complete driver details, vehicle number, and exact pickup timing well ahead of your journey.",
+      hi: "हमारा नासिक डिस्पैच डेस्क व्हाट्सएप या फोन कॉल के माध्यम से 10 से 15 मिनट के भीतर लोकल और आउटस्टेशन कैब बुकिंग की पुष्टि करता है। पुष्टि के बाद आपको यात्रा से पहले ड्राइवर का विवरण, वाहन नंबर और सटीक पिकअप समय भेजा जाता है।",
+      mr: "आमचा नाशिक डिस्पॅच डेस्क व्हॉट्सॲप किंवा फोन कॉलद्वारे १० ते १५ मिनिटांत लोकल आणि आउटस्टेशन कॅब बुकिंगची खात्री करतो. बुकिंग निश्चित झाल्यावर प्रवासापूर्वीच चालकाचा तपशील, गाडीचा नंबर आणि अचूक पिकअप वेळ कळवली जाते.",
+    },
+  },
+  {
+    id: "pickup-locations",
+    question: {
+      en: "Which Pickup Locations Do You Cover In Nashik?",
+      hi: "आप नासिक में किन-किन पिकअप स्थानों को कवर करते हैं?",
+      mr: "तुम्ही नाशिकमध्ये कोणकोणती पिकअप ठिकाणे कव्हर करता?",
+    },
+    answer: {
+      en: "We provide 24/7 doorstep pickup across all major Nashik areas including College Road, Gangapur Road, Panchavati, Indira Nagar, Cidco, Pathardi Phata, Nashik Road Railway Station, and Ozar Airport.",
+      hi: "हम कॉलेज रोड, गंगापुर रोड, पंचवटी, इंदिरा नगर, सिडको, पाथर्डी फाटा, नासिक रोड रेलवे स्टेशन और ओज़र एयरपोर्ट सहित नासिक के सभी प्रमुख क्षेत्रों से 24/7 डोरस्टेप पिकअप प्रदान करते हैं।",
+      mr: "आम्ही कॉलेज रोड, गंगापूर रोड, पंचवटी, इंदिरा नगर, सिडको, पाथर्डी फाटा, नाशिक रोड रेल्वे स्थानक आणि ओझर विमानतळासह नाशिकमधील सर्व प्रमुख भागांतून २४/७ थेट घरपोच पिकअप सेवा देतो.",
+    },
+  },
+  {
+    id: "payment-options",
+    question: {
+      en: "What Payment Methods Do You Support?",
+      hi: "आप कौन-कौन से भुगतान माध्यम स्वीकार करते हैं?",
+      mr: "तुम्ही कोणकोणत्या पेमेंट पद्धती स्वीकारता?",
+    },
+    answer: {
+      en: "You can pay conveniently via UPI (Google Pay, PhonePe, Paytm), bank transfer (NEFT/IMPS), or cash directly to the driver upon trip completion. Corporate GST invoices are also provided on request.",
+      hi: "आप यात्रा पूरी होने पर यूपीआई (गूगल पे, फोनपे, पेटीएम), बैंक ट्रांसफर (NEFT/IMPS) या सीधे ड्राइवर को नकद भुगतान कर सकते हैं। अनुरोध पर कॉर्पोरेट जीएसटी इनवॉइस भी उपलब्ध है।",
+      mr: "प्रवास पूर्ण झाल्यावर तुम्ही यूपीआय (गुगल पे, फोनपे, पेटीएम), बँक ट्रान्सफर (NEFT/IMPS) किंवा थेट चालकाला रोख स्वरूपात पेमेंट करू शकता. मागणीनुसार कॉर्पोरेट जीएसटी बिल देखील दिले जाते.",
+    },
+  },
+  {
+    id: "cancellation-policy",
+    question: {
+      en: "How Can I Reschedule Or Cancel My Booking?",
+      hi: "मैं अपनी बुकिंग को रीशेड्यूल या रद्द कैसे कर सकता हूं?",
+      mr: "मी माझे बुकिंग रीशेड्यूल किंवा रद्द कसे करू शकतो?",
+    },
+    answer: {
+      en: "Simply message our Nashik support team on WhatsApp or call our helpline at least 4 hours before your scheduled pickup time for free rescheduling or hassle-free cancellation.",
+      hi: "निःशुल्क रीशेड्यूल या आसान रद्दीकरण के लिए अपने निर्धारित पिकअप समय से कम से कम 4 घंटे पहले व्हाट्सएप पर हमारी नासिक सहायता टीम को संदेश भेजें या हमारी हेल्पलाइन पर कॉल करें।",
+      mr: "मोफत रीशेड्यूल किंवा सोप्या रद्दीकरणासाठी तुमच्या नियोजित पिकअप वेळेच्या किमान ४ तास आधी आमच्या नाशिक सपोर्ट टीमला व्हॉट्सॲपवर मेसेज करा किंवा आमच्या हेल्पलाइनवर कॉल करा.",
+    },
+  },
+];

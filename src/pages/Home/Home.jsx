@@ -20,7 +20,7 @@ import {
   Sun,
   Users,
 } from "lucide-react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import PackageCard from "../../components/PackageCard/PackageCard";
@@ -39,6 +39,7 @@ import AboutSection from "../../components/AboutSec/AboutSec";
 import { Col, Container, Row } from "react-bootstrap";
 import WhyChooseSection from "../../components/common/WhyChooseSection";
 import ServicePackageCard from "../../components/common/ServicePackageCard";
+import DestinationDetailModal from "../../components/Destination/DestinationModal";
 
 const TRENDING_IDS = [
   "trimbakeshwar",
@@ -54,7 +55,7 @@ const TRENDING_IDS = [
 export default function Home() {
   const { openEnquiryModal } = useEnquiryModal();
   const { t, pick } = useLanguage();
-
+  const [selectedDestination, setSelectedDestination] = useState(null);
   const [activePackageCat, setActivePackageCat] = useState("Cities");
   const [activeVehicleTab, setActiveVehicleTab] = useState("All");
 
@@ -164,89 +165,17 @@ export default function Home() {
 
   return (
     <>
-       <SEO data={seoData.home} />
+      <SEO data={seoData.home} />
 
       {/* 1. Togo-style Hero Slider + Floating Search Dock */}
       <HeroSlider />
 
-      {/* 2. Togo Marketplace Horizontal Category Discovery Strip */}
-      {/* <section className="container-custom" aria-label="Trip Categories">
-        <div className="marketplace-category-strip">
-          {categoryDiscovery.map((item) => {
-            const Icon = item.icon;
-            if (item.to) {
-              return (
-                <Link
-                  key={item.id}
-                  to={item.to}
-                  className="marketplace-category-item"
-                >
-                  <Icon
-                    size={20}
-                    style={{ color: "#2196d2" }}
-                    aria-hidden="true"
-                  />
-                  <span>{item.label}</span>
-                </Link>
-              );
-            }
-            const isActive =
-              activePackageCat === item.pkgFilter && item.id !== "Hills";
-            return (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => handleCategoryClick(item.pkgFilter)}
-                className={`marketplace-category-item ${isActive ? "is-active" : ""}`}
-              >
-                <Icon
-                  size={20}
-                  style={{ color: "#2196d2" }}
-                  aria-hidden="true"
-                />
-                <span>{item.label}</span>
-              </button>
-            );
-          })}
-        </div>
-      </section> */}
-
-      {/* 3. Compact Welcome & Custom Trip Planner Strip */}
-      {/* <section className="section-pad pt-4">
-        <div className="container-custom">
-          <div className="travel-card p-4 p-lg-5 bg-white">
-            <div className="row g-4 align-items-center">
-              <div className="col-lg-7">
-                <span className="section-kicker">
-                  {t("sections.welcomeKicker")}
-                </span>
-                <h2 className="section-heading mb-2">
-                  {t("sections.welcomeTitle")}
-                </h2>
-                <p className="text-secondary mb-0" style={{ maxWidth: "62ch" }}>
-                  {t("sections.welcomeBody")}
-                </p>
-              </div>
-              <div className="col-lg-5 d-flex flex-wrap justify-content-lg-end gap-2">
-                <Link to="/customize-trip" className="btn-yellow">
-                  <SlidersHorizontal size={17} aria-hidden="true" />
-                  <span>{t("hero.customizeBtn")}</span>
-                </Link>
-                <Link to="/packages" className="btn-outline-navy">
-                  <span>{t("hero.exploreBtn")}</span>
-                  <ArrowRight size={16} aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <AboutSection />
 
       {/* 7. Services Strip */}
       <section className="section-pad">
         <Container className="">
-          <div className="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-2 title-block-mb-50">
+          <div className="d-flex text-center text-sm-start flex-column flex-sm-row align-itmes-center justify-content-between gap-2 title-block-mb-50">
             <div>
               <span className="section-kicker">
                 {t("sections.servicesKicker")}
@@ -255,17 +184,19 @@ export default function Home() {
                 {t("sections.servicesTitle")}
               </h2>
             </div>
-            <Link
-              to="/services"
-              className="btn-common accent pill align-self-start align-self-md-auto"
-            >
-              <span>{t("sections.allServices")}</span>
-            </Link>
+            <div className="d-flex align-items-center justify-content-center">
+              <Link
+                to="/services"
+                className="btn-common accent pill align-self-start align-self-md-auto"
+              >
+                <span>{t("sections.allServices")}</span>
+              </Link>
+            </div>
           </div>
 
-          <Row className="gx-4 gy-5">
+          <Row className="gx-4 gy-5 mt-0 mt-sm-2">
             {TRAVEL_SERVICES.map((service) => (
-              <Col key={service.id} xs={6} lg={3}>
+              <Col key={service.id} sm={6} lg={3}>
                 <ServiceCard service={service} />
               </Col>
             ))}
@@ -278,7 +209,7 @@ export default function Home() {
       {/* 6. Our Vehicles Showcase */}
       <section className="section-pad section-surface-white">
         <Container className="">
-          <div className="d-flex flex-row align-items-center justify-content-between gap-3 title-block-mb-50">
+          <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 title-block-mb-50">
             <div className="text-center text-sm-start">
               <span className="section-kicker">
                 {t("sections.vehiclesKicker")}
@@ -304,7 +235,7 @@ export default function Home() {
               return (
                 <div key={vehicle.id} className="col-md-6 col-lg-3">
                   <article className="travel-card p-3">
-                    <div className="travel-card-media rounded-3">
+                    <div className="travel-card-media rounded-3 car-card-media">
                       <SmartImage
                         src={vehicle.image}
                         alt={vehicle.imageAlt}
@@ -326,33 +257,40 @@ export default function Home() {
 
           <div className="d-md-none">
             <Swiper
-              modules={[Pagination]}
+              modules={[Pagination, Autoplay]}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
               spaceBetween={14}
-              slidesPerView={1.15}
+              slidesPerView={2.15}
               pagination={{ clickable: true }}
               className="card-swiper"
             >
               {VEHICLES.slice(0, 4).map((vehicle) => {
                 const vehicleName = pick(vehicle.name);
                 return (
-                  <div key={vehicle.id} className="col-md-6 col-lg-3">
-                    <article className="travel-card">
-                      <div className="travel-card-media">
+                  <SwiperSlide key={vehicle.id}>
+                    <article className="travel-card h-100">
+                      <div className="travel-card-media car-card-media">
                         <SmartImage
                           src={vehicle.image}
                           alt={vehicle.imageAlt}
                           fallbackLabel={vehicleName}
+                          className=""
                         />
                       </div>
 
-                      <div className="travel-card-body">
+                      <div className="travel-card-body car-card-body">
                         <h3 className="h5 fw-bold mb-0">{vehicleName}</h3>
                         <p className="small text-secondary mb-0">
                           {vehicle.models}
                         </p>
                       </div>
                     </article>
-                  </div>
+                  </SwiperSlide>
                 );
               })}
             </Swiper>
@@ -362,23 +300,25 @@ export default function Home() {
 
       {/* 4. Trending Destinations Photo Tiles */}
       <section className="section-pad">
-        <Container className="">
-          <div className="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-2 title-block-mb-50">
-            <div>
+        <Container>
+          <div className="d-flex flex-column flex-sm-row align-items-center gap-2 title-block-mb-50">
+            <div className="d-flex flex-column align-items-center align-items-sm-start">
               <span className="section-kicker">
                 {t("sections.destinationsKicker")}
               </span>
-              <h2 className="section-heading mb-0">
+              <h2 className="section-heading mb-0 text-center text-sm-start">
                 {t("sections.destinationsTitle")}
               </h2>
             </div>
-            <Link
-              to="/destinations"
-              className="btn-common accent pill align-self-start align-self-md-auto"
-            >
-              <span>{t("sections.allDestinations")}</span>
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </Link>
+            <div className="d-flex align-itmes-center justify-content-center">
+              <Link
+                to="/destinations"
+                className="btn-common accent pill align-self-start align-self-md-auto"
+              >
+                <span>{t("sections.allDestinations")}</span>
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
 
           <Row className="g-3 d-none d-md-flex">
@@ -389,16 +329,7 @@ export default function Home() {
                   <button
                     type="button"
                     className="destination-tile"
-                    onClick={() =>
-                      openEnquiryModal(
-                        {
-                          serviceType: "Destination Trip Enquiry",
-                          pickupLocation: "Nashik",
-                          destination: dest.name.en,
-                        },
-                        name,
-                      )
-                    }
+                    onClick={() => setSelectedDestination(dest)}
                   >
                     <SmartImage
                       src={dest.image}
@@ -436,16 +367,7 @@ export default function Home() {
                     <button
                       type="button"
                       className="destination-tile"
-                      onClick={() =>
-                        openEnquiryModal(
-                          {
-                            serviceType: "Destination Trip Enquiry",
-                            pickupLocation: "Nashik",
-                            destination: dest.name.en,
-                          },
-                          name,
-                        )
-                      }
+                      onClick={() => setSelectedDestination(dest)}
                     >
                       <SmartImage
                         src={dest.image}
@@ -469,6 +391,11 @@ export default function Home() {
             </Swiper>
           </div>
         </Container>
+
+        <DestinationDetailModal
+          destination={selectedDestination}
+          onClose={() => setSelectedDestination(null)}
+        />
       </section>
 
       {/* 8. Why Travel With Us + Demo Testimonials */}

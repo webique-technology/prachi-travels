@@ -5,7 +5,7 @@ import { SITE_CONFIG } from "../../config/siteConfig";
 import { useLanguage } from "../../context/LanguageContext";
 import { SUPPORTED_LANGUAGES } from "../../i18n/translations";
 import { Container, Dropdown } from "react-bootstrap";
-import brandLogo from "../../assets/images/prachitravellogo.svg"
+import brandLogo from "../../assets/images/prachitravellogo.svg";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,7 +62,11 @@ export default function Header() {
               className="brand-wordmark"
               aria-label={pick(SITE_CONFIG.brandName)}
             >
-              <img src={brandLogo} alt="Logo" className="img-fluid brand-logo"/>
+              <img
+                src={brandLogo}
+                alt="Logo"
+                className="img-fluid brand-logo"
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -163,10 +167,8 @@ export default function Header() {
             to="/"
             className="brand-wordmark"
             aria-label={pick(SITE_CONFIG.brandName)}
-            onClick={() => setMenuOpen(false)}
           >
-            <Compass size={26} className="brand-icon" aria-hidden="true" />
-            <span>{pick(SITE_CONFIG.shortName)}</span>
+            <img src={brandLogo} alt="Logo" className="img-fluid brand-logo" />
           </Link>
 
           <button
@@ -199,7 +201,7 @@ export default function Header() {
           <Link
             to="/customize-trip"
             tabIndex={menuOpen ? 0 : -1}
-            className="btn-common primary pill mobile-drawer-cta"
+            className="btn-common accent pill mobile-drawer-cta"
             onClick={() => setMenuOpen(false)}
           >
             <SlidersHorizontal size={16} aria-hidden="true" />
